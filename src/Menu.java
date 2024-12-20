@@ -32,15 +32,16 @@ public class Menu {
                 System.out.println(item_index++ + ". " + menu_item);
             }
             choice = keyboard.next().charAt(0) - 48;
-            if (!isValidChoice(choice)){
+            if (!isValidChoice(choice)) {
                 System.out.println("Invalid choice. Try again.");
             }
         } while (!isValidChoice(choice));
 
+        System.out.println(menu_items.get(choice));
         return menu_items.get(choice);
     }
 
-    private boolean isValidChoice(int choice){
+    private boolean isValidChoice(int choice) {
 
         return choice >= 0 && choice <= 9 && choice <= menu_items.size() - 1;
 
